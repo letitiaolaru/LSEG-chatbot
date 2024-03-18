@@ -2,6 +2,10 @@ import { Navbar, Container } from "react-bootstrap";
 import { Robot } from "react-bootstrap-icons";
 import { CHATBOT_NAME } from "../../utilities/constants";
 
+/*
+  This is a navbar component for the chat window.
+  It will be displayed at the top of the chat window.
+*/
 const ChatNavbar = () => {
   return (
     <div>

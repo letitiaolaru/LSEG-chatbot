@@ -1,6 +1,5 @@
 export const CHATBOT_NAME = 'LSEG Chatbot';
 export const CHATBOT_ERROR_MESSAGE = 'Sorry, I am unable to process your request at the moment. Please try again later.';
-export const CHATBOT_ERROR_MISSUNDERSTOOD = 'Sorry, I didn\'t understand that. Please try again.';
 export const CHAT_REPLY_DELAY = 1000;
 
 export const CHAT_REPLY = {

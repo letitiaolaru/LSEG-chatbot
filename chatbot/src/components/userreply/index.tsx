@@ -3,6 +3,11 @@ interface UserReplyProps {
   index: number;
 }
 
+/*
+  This is the user reply component that will be displayed when the user sends a message.
+  * message - The message to be displayed.
+  * index - The index of the message in the message queue.
+*/
 const UserReply = (props: UserReplyProps) => {
   const { message, index } = props;
 

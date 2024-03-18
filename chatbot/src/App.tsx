@@ -4,6 +4,10 @@ import ChatBotPage from './pages/ChatBotPage';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 
+/*
+  This is the main App component. It  uses the react-router-dom library
+  for routing and redirects to the chatbot page by default
+*/
 function App() {
   return (
     <Router>

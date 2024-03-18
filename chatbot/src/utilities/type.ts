@@ -4,6 +4,7 @@ export type PICKED_VALUE = {
   price?: number;
 }
 
+// The message queue for the chatbot.
 export type MESSAGE_QUEUE = {
   message: string;
   options?: PICKED_VALUE[];

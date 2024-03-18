@@ -5,7 +5,15 @@ interface ChatReplyProps {
   item: MESSAGE_QUEUE
   handleClick: (stock: any) => void;
 }
+/*
+  This is the chat reply component that will be displayed when the bot sends a message.
+  * index - The index of the message in the message queue.
+  * item - The message object.
+  * handleClick - The function to handle the click event.
 
+  The component will display the message and the options if available.After the user clicks on an option,
+  the handleClick function will be called.
+*/
 const ChatReply = (props: ChatReplyProps) => {
   const { index, item, handleClick } = props;
 

@@ -1,6 +1,10 @@
 import React from "react";
 import { Send } from "react-bootstrap-icons";
 
+/*
+This is a footer component for the chat window.
+It will be displayed at the bottom of the chat window.
+ */
 const ChatFooter = () => {
   return (
     <div 

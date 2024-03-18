@@ -2,6 +2,10 @@ interface ErrorMessageProps {
   error: string;
 }
 
+/*
+This is the error message component that will be displayed
+when an error occurs in the chatbot.
+*/
 const ErrorMessage = (props: ErrorMessageProps) => {
   const { error } = props;
 

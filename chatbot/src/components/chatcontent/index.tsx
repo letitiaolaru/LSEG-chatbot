@@ -18,11 +18,16 @@ import ChatReply from '../chatreply';
 const ChatContent = () => {
   const [error, setError] = useState<string | undefined>(undefined);
   const [stockExchanges, setStockExchanges] = useState<StockExchange[]>([]);
+  // extract the messages, step and previewExchange from the store
   const chatMessages = useSelector(messagesSelector);
   const step = useSelector(stepSelector);
   const previewExcange = useSelector(previewExchangeSelector);
   const dispatch = useDispatch();
 
+  /*
+    Fetch the stock data from the json file and set the stockExchanges in the state.
+    If the response is not available, set the error message.
+  */
   useEffect(() => {
     (async () => {
       try {
@@ -31,6 +36,7 @@ const ChatContent = () => {
           setError(CHATBOT_ERROR_MESSAGE);
           return;
         }
+        // add first question to the chat after fetching the stock data
         setTimeout(() => {
           dispatch(addMessage({
             message: CHAT_REPLY.STOCK_EXCHANGE,
@@ -53,6 +59,7 @@ const ChatContent = () => {
     )();
   } , []);
 
+  // Set the selected stock exchange in the store and add the next question to the chat.
   const handleStockExchangeSelected = (stock: PICKED_VALUE) => {
     const selectedStock = stockExchanges.find((item) => item.code === stock.code);
     dispatch(setPreviewExcange(stock.code));
@@ -78,6 +85,7 @@ const ChatContent = () => {
     dispatch(setStep(CHAT_STEPS.STOCKS));
   }
 
+  // Set the selected stock in the store and add the next question to the chat.
   const handleStockSelected = (stock: any) => {
     dispatch(addMessage({
       message: stock.name,
@@ -104,6 +112,7 @@ const ChatContent = () => {
     dispatch(setStep(CHAT_STEPS.STOCK_DETAILS));
   }
 
+  // Add stock details to the chat and set the next step.
   const handleStockDetails = (option: PICKED_VALUE) => {
     if (option.code === 'main-menu') {
       dispatch(addMessage({
@@ -135,6 +144,7 @@ const ChatContent = () => {
     dispatch(setStep(CHAT_STEPS.STOCK_EXCHANGE));
   }
 
+  // Handle the click event of the chat options.
   const handleClick = (stock: PICKED_VALUE) => {
     switch (step) {
       case 0:
